@@ -37,7 +37,7 @@ public class StepDefinitions {
         RestAssured.baseURI = BASE_URL;
 
         RequestSpecification req = given();
-        req.header("authorization","Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB3ZWJsaW5rdGVjaHMuY29tIiwiZXhwIjoxNjYyNDU1MjU1LCJpYXQiOjE2NjI0NTE2NTV9.EuBihaCMiN6o1627af_GFVvIhiaMjp2oghGxn6qzlKrtxrt3vq7azJ0sY8Ea6Im8LB9a7KJ-f-eNrvitL5NF6A");
+        req.header("authorization","Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB3ZWJsaW5rdGVjaHMuY29tIiwiZXhwIjoxNjYyNDcxNzQxLCJpYXQiOjE2NjI0NjgxNDF9.3I3QE1JhkBuj0tZf-X7jn1SvinS_IklcPKEQQXMlrNf_tFXbJZDAZuvbDvKg9PfZOoE03gApMBnA3X7EyvHUTg");
         response = req.when().get(new URI(url));
     }
 
@@ -54,7 +54,7 @@ public class StepDefinitions {
             given().contentType(ContentType.JSON)
                     .body(body)
                     .when()
-                    .post("https://search-admin-dev-mamb5phriq-uc.a.run.app/auth/")
+                    .post(BASE_URL)
                     .then()
                     .assertThat()
                     .statusCode(HttpStatus.SC_OK);
